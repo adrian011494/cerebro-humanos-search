@@ -1,10 +1,22 @@
-'use strict';
+const React = require('react');
 
-const plugin = ({term, display, actions}) => {
-  // It is your main plugin function
-  // do something and call display() with your results
-};
+const icon = require('./icon.png');
 
-module.exports = {
-  fn: plugin
+const { search, shellCommand } = require('cerebro-tools')
+
+
+const fn = ({ term, actions, display }) => {
+
+    const result = {
+    	icon,
+      title: 'Buscar en humanOS: '+term,
+      subtitle: "https://humanos.uci.cu",
+      term,      
+      onSelect: () => actions.open("https://humanos.uci.cu/search/"+term)
+    }
+
+    display(result)
+  
 }
+
+module.exports = { fn }
