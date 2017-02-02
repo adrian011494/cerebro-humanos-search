@@ -4,11 +4,12 @@ const icon = require('./icon.png');
 
 const { search, shellCommand } = require('cerebro-tools')
 
-
+const order = 10
 const fn = ({ term, actions, display }) => {
 
     const result = {
     	icon,
+    	order,
       title: 'Buscar en humanOS: '+term,
       subtitle: "https://humanos.uci.cu",
       term,      
